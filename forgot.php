@@ -18,6 +18,7 @@
 							<div class="">
 								<input type="text" name="email" placeholder="Email Address" />
 							</div>
+							
 							<button name="login-btn" type="submit" class="btn btn-default pull-right btn-block">Get Code</button>
 						</form>
 					</div>
