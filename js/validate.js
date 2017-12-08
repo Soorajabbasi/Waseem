@@ -1,4 +1,14 @@
 $(document).ready(function() {
+jQuery.validator.addMethod("lettersonly", function(value, element) 
+{
+  return this.optional(element) || /^[a-z ]+$/i.test(value);
+}, "Letters and spaces only please");
+
+jQuery.validator.addMethod("cell", function (value, element) {
+    value = value.replace(/\s+/g, "");
+    return this.optional(element) || value.length > 9 && value.match(/^[0][3,7][0-9]*$/);
+    }, "Invalid Phone Number");
+
 $("#login-form").validate({
     rules: {
         email: {
@@ -34,6 +44,35 @@ $("#forgot-form").validate({
         email: {
           required: "This feild is required",
           email: "Enter a valid email address"
+        }
+      }
+});
+$("#signup-form").validate({
+    rules: {
+        firstname:{
+          required:true,
+          lettersonly:true,
+          minlength:4,
+          maxlength:60
+        },
+        lastname:{
+          required:true,
+          lettersonly:true,
+          minlength:4,
+          maxlength:60
+        },
+        phonenumber:{
+          cell:true,
+          minlength:11,
+          maxlength:11,
+          required:true,
+        },
+        email: {
+          required: true,
+          email: true
+        },
+        password:{
+          required:true
         }
       }
 });
