@@ -17,7 +17,7 @@
 						</form>
 					</div><!--/login form-->
 				</div>
-				<div class="col-sm-4 "></div>
+				<div class="col-sm-4"></div>
 			</div>
 		</div>
 	</section><!--/form-->

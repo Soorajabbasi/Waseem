@@ -1,3 +1,5 @@
+<?php //include('includes/connection.php'); ?>
+<?php include('includes/core.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
