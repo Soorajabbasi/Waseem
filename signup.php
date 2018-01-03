@@ -1,4 +1,10 @@
-<?php  include_once('includes/header.php') ?>
+<?php  
+	include_once('includes/session.php');
+	include_once('includes/core.php');
+	if(isset($_SESSION['user_id'])){header('location:dashboard');}	
+	if (isset($_POST['login-btn'])) {create_account();}
+	include_once('includes/header.php'); 
+?>
 	<section style="margin-bottom:100px; margin-top: 20px;"><!--form-->
 		<div class="container">
 			<div class="row">
@@ -6,7 +12,7 @@
 				<div class="col-md-6 login-form">
 						<p class="page-name">Signup</p>
 						<p>Please Register your self to discover more</p></center>
-						<form id="signup-form" method="post" action="blank.php">
+						<form id="signup-form" method="post">
 							<div class="form-group">
 								<label for="firstname">First Name</label>
 								<input type="text" name="firstname" placeholder="First Name" />

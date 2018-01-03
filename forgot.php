@@ -1,3 +1,5 @@
+<?php  include_once('includes/session.php') ?>	
+<?php  include_once('includes/core.php') ?>
 <?php  include_once('includes/header.php') ?>	
 	<style type="text/css">
 		#forgot{

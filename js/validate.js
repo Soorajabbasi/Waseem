@@ -7,7 +7,7 @@ jQuery.validator.addMethod("lettersonly", function(value, element)
 jQuery.validator.addMethod("cell", function (value, element) {
     value = value.replace(/\s+/g, "");
     return this.optional(element) || value.length > 9 && value.match(/^[0][3,7][0-9]*$/);
-    }, "Invalid Phone Number");
+    }, "Invalid Phone Number, Write in following Pattern 03XXXXXXXXX");
 
 $("#login-form").validate({
     rules: {
@@ -62,9 +62,9 @@ $("#signup-form").validate({
           maxlength:60
         },
         phonenumber:{
-          cell:true,
           minlength:11,
           maxlength:11,
+          cell:true,
           required:true,
         },
         email: {
@@ -75,5 +75,33 @@ $("#signup-form").validate({
           required:true
         }
       }
+});
+$("#review_from").validate({
+  rules:{
+    name:{
+        required:true,
+        lettersonly:true,
+        minlength:4,
+        maxlength:60
+    },
+    email:{
+      email:true,
+      required:true
+    },
+    review_des:{
+      required:true,
+      minlength:100,
+      maxlength:1000
+    }
+  },
+  messages:{
+    name:{
+      required:"*"
+    },
+    email:{
+      email:"Please Insert Vaild Email Address",
+      required:"*"
+    }
+  }
 });
 });

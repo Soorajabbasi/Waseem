@@ -1,13 +1,11 @@
-<?php //include('includes/connection.php'); ?>
-<?php include('includes/core.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Online Shopping</title>
+    <meta name="description" content="This is online store for RubaDigital Larkana Region">
+    <meta name="author" content="RubaDigital">
+    <title>RubaDigital</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -34,7 +32,9 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.php"><img src="images/home/logo.png" alt="" /></a>
+							<a href="index.php">
+								<!-- <h2>Ruba Digital</h2> -->
+								<img src="images/home/logo.png" alt="" /></a>
 						</div>
 					</div>
 					<div class="col-sm-8">
@@ -67,7 +67,7 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+								<!-- <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a> -->
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Products</a></li>
 										<li><a href="product-details.html">Product Details</a></li> 
@@ -76,14 +76,14 @@
 										<li><a href="login.html" class="active">Login</a></li> 
                                     </ul>
                                 </li> 
-								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+								<!-- <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a> -->
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="blog.html">Blog List</a></li>
 										<li><a href="blog-single.html">Blog Single</a></li>
                                     </ul>
                                 </li> 
-								<li><a href="404.html">404</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
+								<!-- <li><a href="404.html">404</a></li> -->
+								<!-- <li><a href="contact-us.html">Contact</a></li> -->
 								<li><a href="login">Login</a></li>
 								<li><a href="signup">Sign Up</a></li>
 							</ul>
@@ -91,7 +91,9 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
+							<form method="get" action="products">
+								<input type="text" name="search" placeholder="Search Products"/>
+							</form>
 						</div>
 					</div>
 				</div>

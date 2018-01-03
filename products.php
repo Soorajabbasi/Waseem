@@ -1,5 +1,10 @@
+<?php  include_once('includes/session.php') ?>	
+<?php  include_once('includes/core.php') ?>
 <?php include_once 'includes/header.php';
-if(isset($_GET['subcatid'])){$link=$_GET['subcatid'];}?>
+if(isset($_GET['subcatid'])){$link=$_GET['subcatid'];}
+else if(isset($_GET['companyid'])){$link=$_GET['companyid'];}
+else if(isset($_GET['search'])){$link=$_GET['search'];}
+?>
 	<section id="advertisement">
 		<div class="container">
 			<img src="images/shop/advertisement.jpg" alt="" />
@@ -18,13 +23,7 @@ if(isset($_GET['subcatid'])){$link=$_GET['subcatid'];}?>
 							<h2>Brands</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
-									<li><a href=""> <span class="pull-right">(50)</span>Acne</a></li>
-									<li><a href=""> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-									<li><a href=""> <span class="pull-right">(27)</span>Albiro</a></li>
-									<li><a href=""> <span class="pull-right">(32)</span>Ronhill</a></li>
-									<li><a href=""> <span class="pull-right">(5)</span>Oddmolly</a></li>
-									<li><a href=""> <span class="pull-right">(9)</span>Boudestijn</a></li>
-									<li><a href=""> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+									<?php all_compnies(); ?>
 								</ul>
 							</div>
 						</div><!--/brands_products-->
@@ -38,7 +37,10 @@ if(isset($_GET['subcatid'])){$link=$_GET['subcatid'];}?>
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
-						<?php products($link,'Index'); ?>
+						<?php if(isset($_GET['subcatid'])){products($link,'Products');}
+						 	else if(isset($_GET['companyid'])){products($link,'Company');}
+						 	else if(isset($_GET['search'])){products($link,'Search');}
+						 		?>
 						<div class="col-md-12" hidden>
 							<ul class="pagination">
 								<li class="active"><a href="">1</a></li>
